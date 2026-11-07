@@ -1,0 +1,5 @@
+.env
+pkg/
+bin/
+*config.yaml
+.vscode/*
