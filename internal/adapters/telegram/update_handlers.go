@@ -3,9 +3,9 @@ package telegram
 import (
 	"context"
 	"errors"
+	"github.com/gerruda/simple_gatekeeper/internal/services/welcome"
 	"strconv"
 	"strings"
-	"github.com/gerruda/simple_gatekeeper/internal/services/welcome"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )

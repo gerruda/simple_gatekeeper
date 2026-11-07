@@ -2,8 +2,8 @@ package memory
 
 import (
 	"context"
-	"sync"
 	"github.com/gerruda/simple_gatekeeper/internal/ports"
+	"sync"
 )
 
 var (

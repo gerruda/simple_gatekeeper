@@ -32,8 +32,8 @@ func NewConfig(ctx context.Context, logger *logger.Logger, path string) (*Config
 }
 
 func (c *Config) LoadConfig(ctx context.Context, path string) error {
-	if err := godotenv.Load(filepath.Join(path, ".env")); err != nil {
-		c.logger.Logger.Sugar().Errorf("[configs:LoadConfig] не удалось считать файл .env file, %s \n", err)
+	if err := godotenv.Load(filepath.Join(path, ".env")); err != nil && c.logger != nil {
+		c.logger.Logger.Sugar().Errorf("[configs:LoadConfig] не удалось прочитать файл .env: %v", err)
 	}
 
 	v := viper.New()
@@ -46,9 +46,11 @@ func (c *Config) LoadConfig(ctx context.Context, path string) error {
 	v.AutomaticEnv()
 
 	if err := v.ReadInConfig(); err != nil {
-		c.logger.Logger.Sugar().Errorf("[configs:LoadConfig] ене удалось считать файл config.yaml, %s \n", err)
+		if c.logger != nil {
+			c.logger.Logger.Sugar().Errorf("[configs:LoadConfig] не удалось прочитать config.yaml: %v", err)
+		}
 
-		return fmt.Errorf("[configs:LoadConfig] ошибка получения конфигов из файла")
+		return fmt.Errorf("[configs:LoadConfig] ошибка получения конфигов из файла: %w", err)
 	}
 
 	c.Token = v.GetString("bot.token")

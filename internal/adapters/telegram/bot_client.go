@@ -3,11 +3,11 @@ package telegram
 import (
 	"context"
 	"fmt"
-	"net/http"
-	"net/url"
 	"github.com/gerruda/simple_gatekeeper/internal/config"
 	"github.com/gerruda/simple_gatekeeper/internal/logger"
 	"github.com/gerruda/simple_gatekeeper/internal/ports"
+	"net/http"
+	"net/url"
 	"time"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
