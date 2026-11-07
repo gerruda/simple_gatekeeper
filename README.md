@@ -1,6 +1,6 @@
 # Бот-привратник для Telegram
 
-[![CI](https://github.com/gerruda/simple_gatekeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/gerruda/simple_gatekeeper/actions/workflows/ci.yml)
+[![CI](https://github.com/gerruda/simple_gatekeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/gerruda/simple_gatekeeper/actions/workflows/ci.yml) [![AI free](https://img.shields.io/badge/AI-free-brightgreen)](https://github.com/gerruda/simple_gatekeeper#ai-free)
 
 Телеграм-бот, который встречает новых участников группы, показывает правила
 и снимает ограничения после нажатия инлайн-кнопки «Принимаю».
